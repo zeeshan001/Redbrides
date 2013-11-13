@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html>
+<!--<![endif]-->
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    
+    <title>Bride Vendor</title>
+    
+    <link type="text/css" rel="stylesheet/less" href="css/style.less" />
+    
+    <!--[if lte IE 8]>
+    <link type="text/css" rel="stylesheet" href="css/ie.css" />
+    <script type="text/javascript" src="js/modernizr.min.js"></script>
+    <![endif]-->
+    
+    <!--[if lte IE 6]>
+    <script type="text/javascript" src="js/belated.js"></script>
+    <![endif]-->
+    
+    
+    <script type="text/javascript" src="js/less-1.0.35.min.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/hzz5wuk.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script>
+		
+		$(function() {
+			$(".as-bride,.wedding-vendor").click(function() {
+				$(".as-bride,.wedding-vendor").removeClass('active');
+				$(this).addClass('active');
+				return false
+			});
+		});
+		
+	</script>
+    
+</head>
+
+<body id="registration-page">
+
+<!--header start -->
+<div class="content-width">
+	<div class="header">
+    	<div class="registration-logo">
+        	<a href="#"><img src="images/registration-logo.png" alt="" ></a>
+        </div>
+    </div>
+</div>
+<!--header end -->
+
+<div class="bride-vendor-section">
+<!--main start -->
+<div class="content-width">
+	<div class="main">
+    	<div class="bride-vendor clearfix">
+        	<span class="step">Step 1 of 2</span>
+            <h2 class="default-heading">How would you like to use REDbrides?</h2>
+            <h2 class="mobile-heading">Let’s get started!</h2>
+            <div class="default-section">
+            	<a href="#" class="as-bride">
+            		<h3>As a Bride</h3>
+                	<p>I’d like to plan my wedding by finding, following or contacting</p>
+                	<img src="images/bride-vendor-img.jpg" alt="" >
+            	</a>
+            	<a href="#" class="wedding-vendor">
+            		<h3>As a Wedding Vendor</h3>
+                	<p>I want to offer wedding services to brides</p>
+                	<img src="images/bride-vendor-img.jpg" alt="" >
+            	</a>
+            </div>
+            <div class="mobile-section">
+            	<a href="#" class="as-bride clearfix">
+                	<em class="bride-img"><img src="images/bride-img.jpg" alt="" ></em>
+                    <span class="img-detail">
+            		<i>Bride</i>
+                	<em>I’d like to plan my wedding by finding, following or contacting.</em>
+                    </span>
+            	</a>
+            	<a href="#" class="wedding-vendor clearfix">
+                    <em class="bride-img"><img src="images/bride-img.jpg" alt="" ></em>
+                    <span class="img-detail">
+            		<i>Wedding Vendor</i>
+                	<em>I want to offer wedding services to brides.</em>
+                    </span>
+            	</a>
+            </div>    
+            <!--<a href="#" class="btn-default primary-btn large almost-done-btn">Almost done<span>></span></a> -->
+            <div class="cl"></div>
+        </div>
+    </div>
+</div>
+<!--main end -->
+
+
+</body>
+</html>

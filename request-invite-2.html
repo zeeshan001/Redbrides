@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html>
+<!--<![endif]-->
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    
+    <title>Request Invite</title>
+    
+    <link type="text/css" rel="stylesheet/less" href="css/style.less" />
+    
+    <!--[if lte IE 8]>
+    <link type="text/css" rel="stylesheet" href="css/ie.css" />
+    <script type="text/javascript" src="js/modernizr.min.js"></script>
+    <![endif]-->
+    
+    <!--[if lte IE 6]>
+    <script type="text/javascript" src="js/belated.js"></script>
+    <![endif]-->
+    
+    
+    <script type="text/javascript" src="js/less-1.0.35.min.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/hzz5wuk.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/scrool-bar.js"></script>
+    <script>
+		$(function() {
+			// scrollbar
+			$('.scroll').tinyscrollbar();
+			
+			$(".wedding-in").click(function() {
+				$(".requestsecond-page").show();
+				
+				$('.scroll').tinyscrollbar();
+				
+				return false
+			});
+			
+			$(".overview li a").click(function() {
+				$(".overview li a").removeClass('active');
+				$(this).addClass('active');
+				
+				return false
+			});
+			
+			
+			//$(".select-inner").click(function() { sample#th$#e%code
+				//var content = $(".overview").find('.active').attr('href');
+				//$(".accordiansection").hide();
+				//$(content).show();
+			//});
+			
+			$(".select-option li a").click(function() {
+				var services = $(this).html();
+				$("#wedding-services em").html(services);
+				
+				$(this).parents(".requestsecond-page").fadeOut();
+				
+				$(".select-option li a").removeClass('active');
+				$(this).addClass('active');
+				
+				return false
+			});
+			
+			$(".select-option li a").hover(function() {
+				$(".accordiansection").hide();
+				$(this.hash).show();
+				$(".sub-category").show();
+			});
+			
+			/*var newcontent = $(this).attr('href').slice(1);sample#th$#e%code
+				
+				$(".accordiansection").hide();
+				$('#'+newcontent).show();
+				$(".sub-category").show();*/
+			
+			
+			$("body").click(function() {
+				$(".requestsecond-page").fadeOut();
+			});
+			
+			$(".requestsecond-page").click(function(e) {
+				e.stopPropagation();
+			});
+		
+		});
+	</script>
+    
+</head>
+
+<body id="registration-page">
+
+<!--header start -->
+<div class="content-width">
+	<div class="header">
+    	<div class="registration-logo">
+        	<a href="#"><img src="images/registration-logo.png" alt="" ></a>
+        </div>
+    </div>
+</div>
+<!--header end -->
+
+<div class="request-2">
+<!--main start -->
+<div class="content-width">
+	<div class="main">
+    	<div class="request-invite request-invite-2 clearfix">
+        	<span class="step">Step 2 of 2</span>
+            <h2>Request invite</h2>
+            <p>
+                <input class="request-field request-field-2 input-field" type="text" placeholder="First name">
+                <input class="request-field request-field-2 input-field" type="text" placeholder="Last name">
+            </p>
+            <p><input class="request-field wedding-date input-field" type="text" placeholder="Email address"></p>
+            <p>
+                <input class="request-field request-field-2 input-field" type="text" placeholder="Company name">
+                <input class="request-field request-field-2 input-field" type="text" placeholder="Business zipcode">
+            </p>
+            
+            <!-- dropdown for mobile -->
+            <div class="request-lastfields">
+            	<div class="request2-dd-mobile">
+            		<a href="#" class="wedding-in" id="wedding-services"><em>Wedding service</em><span>&nbsp;</span></a>
+                    <div class="requestsecond-page">
+                        <div class="select-option">
+                        	<span class="getting-married">Select a wedding service that your business offers</span>
+                            <div class="inner-option">
+                                <div class="scroll">
+                                <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                                <div class="viewport">
+                                    <div class="overview">
+                                        <ul>
+                                            <li><a href="#accordiansection-1">Photography</a></li>
+                                            <li><a href="#accordiansection-2">Videography</a></li>
+                                            <li><a href="#accordiansection-3" class="active">Favors</a></li>
+                                            <li><a href="#accordiansection-4">Disk Jockey</a></li>
+                                            <li><a href="#accordiansection-5">Interior Decorators</a></li>
+                                            <li><a href="#accordiansection-1">Photography</a></li>
+                                            <li><a href="#accordiansection-2">Videography</a></li>
+                                            <li><a href="#accordiansection-3">Favors</a></li>
+                                            <li><a href="#accordiansection-4">Disk Jockey</a></li>
+                                            <li><a href="#accordiansection-5">Interior Decorators</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            	</div>
+                <!-- dropdown for mobile -->
+                
+                
+            	<div class="request-2page-dropdown">
+            	<a href="#" class="wedding-in" id="wedding-services"><em>Wedding service</em><span>&nbsp;</span></a>
+                <div class="requestsecond-page">
+                <div class="sub-category clearfix">
+                	<div class="accordiansection" id="accordiansection-1">
+                		<span>Photography includes the following sub-categories</span>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                            <li>Flower Arrangements</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                        </ul>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                            <li>Flower Arrangements</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                        </ul>
+                    </div>
+                    <div class="accordiansection" id="accordiansection-2">
+                		<span>Videography includes the following sub-categories</span>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                            <li>Flower Arrangements</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                        </ul>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                        </ul>
+                    </div>
+                    <div class="accordiansection" id="accordiansection-3">
+                		<span>Favors includes the following sub-categories</span>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                            <li>Flower Arrangements</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                        </ul>
+                        <ul>
+                            <li>Candy</li>
+                        </ul>
+                    </div>
+                    <div class="accordiansection" id="accordiansection-4">
+                		<span>Disk Jockey includes the following sub-categories</span>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                            <li>Flower Arrangements</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                        </ul>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                            <li>Flower Arrangements</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                        </ul>
+                    </div>
+                    <div class="accordiansection" id="accordiansection-5">
+                		<span>Interior Decorators includes the following sub-categories</span>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                            <li>Flower Arrangements</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                        </ul>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                            <li>Flower Arrangements</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                        </ul>
+                    </div>    
+                </div>
+                <div class="select-option">
+                    <div class="inner-option">
+                        <div class="scroll">
+                        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                        <div class="viewport">
+                            <div class="overview">
+                                <ul>
+                                    <li><a href="#accordiansection-1">Photography</a></li>
+                                    <li><a href="#accordiansection-2">Videography</a></li>
+                                    <li><a href="#accordiansection-3" class="active">Favors</a></li>
+                                    <li><a href="#accordiansection-4">Disk Jockey</a></li>
+                                    <li><a href="#accordiansection-5">Interior Decorators</a></li>
+                                    <li><a href="#accordiansection-1">Photography</a></li>
+                                    <li><a href="#accordiansection-2">Videography</a></li>
+                                    <li><a href="#accordiansection-3">Favors</a></li>
+                                    <li><a href="#accordiansection-4">Disk Jockey</a></li>
+                                    <li><a href="#accordiansection-5">Interior Decorators</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            	</div>    
+            </div>
+            <p class="request-btn">
+            	<a href="#" class="btn blackish-btn large invite-btn">Go back</a>
+            	<a href="#" class="btn primary-btn large invite-btn">Invite me!</a>
+            </p>    
+        </div>
+    </div>
+</div>
+<!--main end -->
+
+
+</body>
+</html>

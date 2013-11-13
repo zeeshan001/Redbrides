@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html>
+<!--<![endif]-->
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    
+    <title>ShowCase</title>
+    
+   
+    <link type="text/css" rel="stylesheet/less" href="css/style.less" />
+    <!--<link type="text/css" rel="stylesheet/less" href="css/jquery.bxslider.css" /> -->
+    <link type="text/css" rel="stylesheet/less" href="css/iso-type.css" />
+    
+    <!--[if lte IE 8]>
+    <link type="text/css" rel="stylesheet" href="css/ie.css" />
+    <script type="text/javascript" src="js/modernizr.min.js"></script>
+    <![endif]-->
+    
+    <!--[if lte IE 6]>
+    <script type="text/javascript" src="js/belated.js"></script>
+    <![endif]-->
+    
+    
+    <script type="text/javascript" src="js/less-1.0.35.min.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/hzz5wuk.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/scrool-bar.js"></script>
+    <script>
+		$(function() {
+			$('.thumbnails-nav a').click(function(){
+				$('.thumbs-tab').fadeOut();
+				$(this.hash).fadeIn();
+				$('.thumbnails-nav a').removeClass('active');
+				$(this).addClass('active');
+				return  false;
+			});
+		});
+		
+		// Slider
+		
+		$(function() {
+			var populatePager = function(){
+				var sliderwidth = $('.slides').children().outerWidth(true) * $('.slides').children().length;
+				$('.slides').width(sliderwidth);
+				var pagerHtml = '';
+				var pagerQty = $('.slides').children().length;
+				// loop through each pager item
+				for(var i=0; i < pagerQty; i++){
+					var linkContent = '';
+					// if a buildPager function is supplied, use it to get pager link value, else use index + 1
+					
+						linkContent = i + 1;
+		
+					// var linkContent = slider.settings.buildPager && $.isFunction(slider.settings.buildPager) ? slider.settings.buildPager(i) : i + 1;
+					// add the markup to the string
+					pagerHtml += '<a href="#model-'+(i + 1)+'"class="bx-pager-link">' + linkContent + '</a>';
+				};
+				// populate the pager element with pager links
+				$('.slides').next('.pager').append(pagerHtml);
+			}
+			
+			populatePager();
+			
+			$('.pager a').click(function() {
+				$(".slides li, .pager a").removeClass('active');
+				$(this.hash).addClass('active');
+				$(this).addClass('active');
+				return false;
+			});
+			
+			$(".pager a").first().addClass('active');
+			$(".slides li").first().addClass('active');
+		});
+		
+		
+		//icon
+		
+		$(function() {
+			$('.related-icon a.loveicon-wrap span').click(function() {
+				$(this).addClass('loveitactive');
+				return false;
+			});
+			$('.related-icon a.commentsicon-wrap span').click(function() {
+				$(this).addClass('commentsactive');
+				return false;
+			});
+			// scrollbar
+			$('.scroll').tinyscrollbar();
+		});
+		$(function() {
+			$('.location').hover(function() {
+				$('.select-option').fadeIn();
+				$('.scroll').tinyscrollbar();
+			},function() {
+				$('.select-option').hide();
+			});
+			
+			$(".overview li a").click(function() {
+				var country = $(this).html();
+				$("#countries em").html(country);
+				$(this).parents(".select-option").fadeOut();
+				$(".overview li a").removeClass('active');
+				$(this).addClass('active');
+				return false
+			});
+			
+			
+			// Nav-collapse
+			$("a.nav-collapse").click(function() {
+				$(".nav ul").slideToggle();
+			});
+			
+			
+			$(".search-dropdown .select-search").hover(function() {
+				$(".search-dropdown .search-options").show();
+			});
+			
+			$(".search-options li a").click(function() {
+				var country = $(this).html();
+				$(".select-search em").html(country);
+				$(this).parents(".search-options").hide();
+				$(".search-options li a").removeClass('active');
+				$(this).addClass('active');
+				return false
+			});
+			
+			$("body").click(function() {
+				$(".search-dropdown .search-options").hide();
+			});
+			
+			$(".search-dropdown .search-options").click(function(e) {
+				e.stopPropagation();
+			});
+			
+			
+			
+			
+		});
+	</script>
+    
+</head>
+
+<body id="showcase-page">
+
+
+<!--header start -->
+<div id="header-wrap">
+	<div class="content-width">
+        <header id="header" class="clearfix">
+        	<div class="notification-login clearfix">
+            	<div class="notifications">
+                	<ul>
+                    	<li>
+                        	<a href="#" class="mail"></a>
+                            <span class="red-cricle">1</span>
+                        </li>
+                        <li>
+                        	<a href="#" class="bell"></a>
+                            <span class="red-cricle">1</span>
+                        </li>
+                        <li>
+                        	<a href="#" class="collections"></a>
+                        </li>
+                        <li class="last">
+                        	<a href="#" class="shopping"></a>
+                            <span class="red-cricle">1</span>
+                        </li>
+                    </ul>
+                </div><!-- notifications ends -->
+                <div class="login-section">
+                	<a href="#" class="login">Preti Zinta</a>
+                    <div class="signedin-section">
+                    	<ul>
+                        	<li><a href="#">Account Settings</a></li>
+                            <li><a href="#">Go PRO</a></li>
+                            <li><a href="#">Admin Panel</a></li>
+                            <li><a href="#">Sign Out</a></li>
+                        </ul>
+                        <span class="polygon-1">&nbsp;</span>
+                    </div>
+                </div><!-- login sectin ends -->
+            </div>
+            <!--notificaiton-login ends -->
+            
+        	<div class="logo-nav clearfix">
+        		<div class="logo-section">
+            		<a href="#" class="logo"><img src="images/logo.png" alt="" ></a>
+            	</div><!-- logo ends -->
+                <div class="nav">
+                	<a href="#" class="nav-collapse">&nbsp;</a>
+                	<ul class="clearfix">
+                    	<li><a href="#">Home</a></li>
+                        <li><a href="#" class="active">Showcase</a></li>
+                        <li><a href="#">Local Vendors</a></li>
+                        <li><a href="#">Ideas</a></li>
+                    </ul>
+                </div><!-- nav ends -->
+            </div>
+            <!--logo-nav ends -->
+        </header>
+    </div>
+</div>
+<!--header end -->
+
+<!--sub-header -->
+<div id="subheader-wrap">
+	<div class="content-width">
+    	<div id="subheader" class="clearfix">
+        	<div class="location">
+            	<a href="#" id="countries"><em>Michigan</em><span class="location-bg">&nbsp;</span></a>
+                <div class="select-option">
+                    <span class="getting-married">Select the state you are getting married in</span>
+                    <div class="inner-option">
+                        <div class="scroll">
+                        	<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                        	<div class="viewport">
+                            	<div class="overview">
+                                	<ul>
+                                    	<li><a href="#">Alabama</a></li>
+                                        <li><a href="#">Alaska</a></li>
+                                        <li><a href="#">Arizona</a></li>
+                                        <li><a href="#">Arkansas</a></li>
+                                        <li><a href="#">California</a></li>
+                                        <li><a href="#">Colorado</a></li>
+                                        <li><a href="#">Connecticut</a></li>
+                                        <li><a href="#">Delaware</a></li>
+                                        <li><a href="#">Florida</a></li>
+                                	</ul>
+                                    <ul>
+                                    	<li><a href="#">Indiana</a></li>
+                                        <li><a href="#">Iowa</a></li>
+                                        <li><a href="#">Kansas</a></li>
+                                        <li><a href="#">Kentucky</a></li>
+                                        <li><a href="#">Louisiana</a></li>
+                                        <li><a href="#">Maine</a></li>
+                                        <li><a href="#">Maryland</a></li>
+                                        <li><a href="#">Massachusetts</a></li>
+                                        <li><a href="#" class="active">Michigan</a></li>
+                                	</ul>
+                                    <ul class="last">
+                                    	<li><a href="#">Nebraska</a></li>
+                                        <li><a href="#">Nevada</a></li>
+                                        <li><a href="#">Nevada</a></li>
+                                        <li><a href="#">New Jersey</a></li>
+                                        <li><a href="#">New Mexico</a></li>
+                                        <li><a href="#">New York</a></li>
+                                        <li><a href="#">North Carolina</a></li>
+                                        <li><a href="#">North Dakota</a></li>
+                                        <li><a href="#">Ohio</a></li>
+                                	</ul>
+                            	</div>
+                        	</div>
+                        </div>   
+                    </div>
+                </div>
+            </div><!-- location ends -->
+            <div class="searcharea clearfix">
+            	<input type="text" placeholder="Search..." class="searchbar " >
+                <div class="search-dropdown">
+                	<ul>
+                    	<li>
+                    		<a href="#" class="select-search"><em>Bridal Wear</em><span class="select-bg">&nbsp;</span></a>
+                        	<ul class="search-options">
+                        		<li><a href="#" class="search-active">Bridal Wear<span>&nbsp;</span></a></li>
+                            	<li><a href="#">All Categories<span>&nbsp;</span></a></li>
+                            	<li><a href="#">Briday Wear<span>&nbsp;</span></a></li>
+                            	<li><a href="#">Ceremony &amp; Reception<span>&nbsp;</span></a></li>
+                            	<li><a href="#">Flowers &amp; Decor<span>&nbsp;</span></a></li>
+                            	<li><a href="#">Jewelry<span>&nbsp;</span></a></li>
+                            	<li><a href="#">Unique Services<span>&nbsp;</span></a></li>
+                            	<li><a href="#">Hair &amp; Beauty<span>&nbsp;</span></a></li>
+                    		</ul>
+                    	</li>     
+                    </ul>    
+                </div>    
+            </div><!-- searcharea ends -->
+            <div class="searchbtn">
+            	<a href="#" class="btn primary-btn large">Search</a>
+            </div><!-- searchbtn edns -->
+        </div>
+    </div>
+</div>
+<!--sub-header ends -->
+
+<!--slider -->
+<div class="slider-wrap">
+	<div class="content-width">
+    	<div class="showcase-slider">
+        	<p>REDbrides is for South Asian brides to help plan for their wedding.  <a href="#">Request an invite</a></p>
+            <div class="state-one">
+            	<div class="main-slider">
+                	<div class="view-port">
+                        <ul class="slides clearfix">
+                            <li id="model-1"><span>BRIDAL WEAR</span><img src="images/model-images.png" alt="" ></li>
+                            <li id="model-2"><span>CAKES</span><img src="images/model-images.png" alt="" ></li>
+                            <li id="model-3"><span>DJ &amp; DHOL PLAYERS</span><img src="images/model-images.png" alt="" ></li>
+                            <li id="model-4"><span>FAVORS</span><img src="images/model-images.png" alt="" ></li>
+                            <li id="model-5"><span>FLOWERS</span><img src="images/model-images.png" alt="" ></li>
+                        </ul>    
+                    	<div class="pager"></div>
+                    	<div class="controls-nav">
+                    		<a href="#" class="prev">&nbsp;</a>
+                    		<a href="#" class="next">&nbsp;</a>
+                    	</div>    
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--slider ends -->
+
+<!--main start -->
+<div id="main-wrap">
+	<div class="content-width">
+    	<div id="thumbs-buttons">
+        	<div class="thumbnails-nav clearfix">
+            	<ul class="clearfix">
+                	<li><a href="#following-tab" class="active">FOLLOWING</a></li>
+                	<li><a href="#popular-tab">popular</a></li>
+                	<li><a href="#recent-tab">recent</a></li>
+                	<li><a href="#buynow-tab">BUY NOW</a></li>
+            	</ul>
+        	</div>
+    	</div>
+        <div class="following thumbs-tab" id="following-tab" style="display:block;">
+            <ul>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img1.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img2.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img3.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="music-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li class="last">
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img4.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img5.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img6.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="video-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img7.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="music-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li class="last">
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img8.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img1.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img2.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img3.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="music-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li class="last">
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img4.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    
+        <div class="following thumbs-tab" id="popular-tab">
+            <ul class="clearfix">
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img6.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="video-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img7.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="music-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img8.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="last">
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img1.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img2.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img3.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="music-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li class="last">
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img4.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    
+        <div class="following thumbs-tab" id="recent-tab">
+            <ul class="clearfix">
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img6.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="video-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img7.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="music-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img8.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="last">
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img1.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img2.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img6.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="video-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img7.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="music-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li class="last">
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img8.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img1.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img2.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img3.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="music-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li class="last">
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img3.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="music-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img3.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="music-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img3.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="music-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img3.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="music-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li class="last">
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img3.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="music-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img4.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    
+        <div class="following thumbs-tab" id="buynow-tab">
+            <ul class="clearfix">
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img6.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="video-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img7.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"><span class="music-icon">&nbsp;</span></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                    <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+                </li>
+                <li>
+                    <div class="thumbnail">
+                        <a href="#"><img src="images/following-img8.jpg" alt="" ></a>
+                    </div>
+                    <div class="related-icon clearfix">
+                        <div class="fl">
+                            <a href="#"></a>	
+                        </div>
+                        <div class="fr">
+                            <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                            <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                            <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+	</div>        
+</div>  
+<!--main end -->
+
+
+<!--footer start -->
+<div id="footer-wrap">
+	<div class="content-width">
+        <footer id="footer" class="clearfix">
+        	<div class="copyright-section">
+                <ul class="clearfix">
+                	<li>© 2013 Viral Rocket, Inc.</li>
+                	<li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+            	<ul class="clearfix">
+                	<li><a href="#">Shop</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</div>
+<!--footer end -->
+
+
+<!--<div class="contetn-width">
+<div class="portfolioContainer">
+        <div class="section" style="float:left; width:250px;">
+            <div class="thumbnail">
+                <a href="#"><img src="images/following-img6.jpg" alt="" ></a>
+            </div>
+            <div class="related-icon clearfix">
+                <div class="fl" style="float:left;">
+                    <a href="#"><span class="video-icon">&nbsp;</span></a>	
+                </div>
+                <div class="fr" style="float:right;">
+                    <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                    <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                    <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                </div>
+            </div>
+            <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+        </div>
+        <div class="section" style="float:left; width:250px;">
+            <div class="thumbnail">
+                <a href="#"><img src="images/following-img6.jpg" alt="" ></a>
+            </div>
+            <div class="related-icon clearfix">
+                <div class="fl">
+                    <a href="#"><span class="video-icon">&nbsp;</span></a>	
+                </div>
+                <div class="fr">
+                    <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                    <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                    <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                </div>
+            </div>
+            <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+        </div>
+        <div class="section" style="float:left; width:250px;">
+            <div class="thumbnail">
+                <a href="#"><img src="images/following-img6.jpg" alt="" ></a>
+            </div>
+            <div class="related-icon clearfix">
+                <div class="fl">
+                    <a href="#"><span class="video-icon">&nbsp;</span></a>	
+                </div>
+                <div class="fr">
+                    <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                    <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                    <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                </div>
+            </div>
+            <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+        </div>
+        <div class="section" style="float:left; width:250px;">
+            <div class="thumbnail">
+                <a href="#"><img src="images/following-img6.jpg" alt="" ></a>
+            </div>
+            <div class="related-icon clearfix">
+                <div class="fl">
+                    <a href="#"><span class="video-icon">&nbsp;</span></a>	
+                </div>
+                <div class="fr">
+                    <a href="#"><span class="view-icon">&nbsp;</span>104</a>
+                    <a href="#" class="commentsicon-wrap"><span class="comments-icon">&nbsp;</span>4</a>
+                    <a href="#" class="loveicon-wrap"><span class="loveit-icon">&nbsp;</span>11</a>
+                </div>
+            </div>
+            <a href="#" class="hover-video" id="fadeLink"><span class="video-hover-icon">&nbsp;</span></a>
+        </div>
+</div>
+<script type="text/javascript">
+$(window).load(function(){
+	var $container = $('.portfolioContainer');
+	$container.isotope({
+		filter: '*',
+		animationOptions: {
+			duration: 750,
+			easing: 'linear',
+			queue: false
+		}
+	});
+});
+</script> -->
+
+</body>
+</html>

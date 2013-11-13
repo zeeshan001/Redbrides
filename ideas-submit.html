@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html>
+<!--<![endif]-->
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    
+    <title>Ideas Submit</title>
+    
+    <link type="text/css" rel="stylesheet/less" href="css/style.less" />
+    
+    <!--[if lte IE 8]>
+    <link type="text/css" rel="stylesheet" href="css/ie.css" />
+    <script type="text/javascript" src="js/modernizr.min.js"></script>
+    <![endif]-->
+    
+    <!--[if lte IE 6]>
+    <script type="text/javascript" src="js/belated.js"></script>
+    <![endif]-->
+    
+    
+    <script type="text/javascript" src="js/less-1.0.35.min.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/hzz5wuk.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/characterCountdown.js"></script>
+    <script type="text/javascript" src="js/tagmanager.js"></script>
+    <script src="js/jquery.autosize.js"></script>
+    <script type="text/javascript" src="js/scrool-bar.js"></script>
+    <script>
+		$(function() {
+			// scrollbar
+			$('.scroll').tinyscrollbar();
+			
+			$("#ideas-category").click(function() {
+				$(".upload-photograph-section .select-option").show();
+				
+				$('.scroll').tinyscrollbar();
+				
+				return false
+			});
+			
+			$(".upload-photograph-section .overview li a").click(function() {
+				$(".upload-photograph-section .overview li a").removeClass('active');
+				$(this).addClass('active');
+				
+				return false
+			});
+			
+			$("body").click(function() {
+				$(".upload-photograph-section .select-option").fadeOut();
+			});
+			
+			$(".upload-photograph-section .select-option").click(function(e) {
+				e.stopPropagation();
+			});
+			
+			
+			$(".upload-photograph-section .overview li a").click(function() {
+				var country = $(this).html();
+				$("#ideas-category em").html(country);
+				$(this).parents(".select-option").fadeOut();
+				$(".upload-photograph-section .overview li a").removeClass('active');
+				$(this).addClass('active');
+				return false
+			});
+			
+			$(".default-style span a").click(function() {
+				$(".instructional-style").show();
+				$(".default-style").hide();
+				return false
+			});
+			
+			$(".instructional-style span a").click(function() {
+				$(".default-style").show();
+				$(".instructional-style").hide();
+				return false
+			});
+	
+			// 	Countdown		
+			$('.ideas-field .error-field').characterCountdown();
+			
+			//tags	
+			$(".tm-input").tagsManager();
+			
+			// scrollbar
+			$('.scroll').tinyscrollbar();
+			
+			$("#i-am-category").click(function() {
+				$(".tellus-section .select-option").show();
+				
+				$('.scroll').tinyscrollbar();
+				
+				return false
+			});
+			$(".tellus-section .overview li a").click(function() {
+				$(".tellus-section .overview li a").removeClass('active');
+				$(this).addClass('active');
+				
+				return false
+			});
+			
+			$("body").click(function() {
+				$(".tellus-section .select-option").fadeOut();
+			});
+			
+			$(".tellus-section .select-option").click(function(e) {
+				e.stopPropagation();
+			});
+			
+			
+			$(".tellus-section .overview li a").click(function() {
+				var country = $(this).html();
+				$("#i-am-category em").html(country);
+				$(this).parents(".select-option").fadeOut();
+				$(".tellus-section .overview li a").removeClass('active');
+				$(this).addClass('active');
+				return false
+			});
+			
+			// accordion
+			$("#accordion h3 a").click (function (){										  
+													  
+	//		$(this).parent().next(".accordion-text").slideToggle();
+				$this = $(this);
+			
+				if ($this.parent().hasClass('ui-state-active')) {
+				
+					$this.parent().next().slideUp(200, function(){ $this.parent().removeClass('ui-state-active')});
+				
+				}else{
+				
+					$this.parent().addClass('ui-state-active').next().slideDown(200);
+				
+				}
+
+				return false;
+			});
+			
+			// scrollbar
+			$('.scroll').tinyscrollbar();
+			
+			$(".jockey-field").click(function() {
+				$(".accordion-detail .select-option").show();
+				
+				$('.scroll').tinyscrollbar();
+				
+				return false
+			});
+			
+			$(".accordion-detail .overview li a").click(function() {
+				$(".accordion-detail .overview li a").removeClass('active');
+				$(this).addClass('active');
+				
+				return false
+			});
+			
+			$("body").click(function() {
+				$(".accordion-detail .select-option").fadeOut();
+			});
+			
+			$(".accordion-detail .select-option").click(function(e) {
+				e.stopPropagation();
+			});
+			
+			
+			$(".accordion-detail .overview li a").click(function() {
+				var country = $(this).html();
+				$(".accordion-detail .jockey-field").val(country);
+				$(this).parents(".accordion-detail .select-option").fadeOut();
+				$(".accordion-detail .overview li a").removeClass('active');
+				$(this).addClass('active');
+				return false
+			});
+			
+			
+			$('.normal').autosize();
+			
+		});
+	</script>
+    
+</head>
+
+<body id="ideassubmit-page">
+
+
+<!--header start -->
+<div id="header-wrap">
+	<div class="content-width">
+        <header id="header" class="clearfix">
+        	<div class="logo-nav clearfix">
+        		<div class="logo-section">
+            		<a href="#" class="logo"><img src="images/logo.png" alt="" ></a>
+            	</div><!-- logo ends -->
+                <div class="nav">
+                	<ul class="clearfix">
+                    	<li><a href="#">Home</a></li>
+                        <li><a href="#" class="active">Showcase</a></li>
+                        <li><a href="#">Local Vendors</a></li>
+                        <li><a href="#">Ideas</a></li>
+                    </ul>
+                </div><!-- nav ends -->
+            </div>
+            <!--logo-nav ends -->
+            <div class="notification-login clearfix">
+            	<div class="notifications">
+                	<ul>
+                    	<li>
+                        	<a href="#" class="mail"></a>
+                        </li>
+                        <li>
+                        	<a href="#" class="bell"></a>
+                        </li>
+                        <li>
+                        	<a href="#" class="collections"></a>
+                        </li>
+                        <li class="last">
+                        	<a href="#" class="shopping"></a>
+                        </li>
+                    </ul>
+                </div><!-- notifications ends -->
+                <div class="login-section">
+                	<a href="#" class="login">Login</a>
+                </div><!-- login sectin ends -->
+            </div>
+            <!--notificaiton-login ends -->
+        </header>
+    </div>
+</div>
+<!--header end -->
+
+<!-- admin-menu start -->
+<div class="adminmenu-wrap">
+	<div class="content-width">
+    	<div class="adminmenu">
+        	<ul class="clearfix">
+            	<li class="active"><a href="#">Items</a><img src="images/admin-nav-hover.png" alt="" ></li>
+                <li><a href="#">Jobs</a><img src="images/admin-nav-hover.png" alt="" ></li>
+                <li><a href="#">Orders</a><img src="images/admin-nav-hover.png" alt="" ></li>
+                <li><a href="#" class="active-2">Blog It!</a><img src="images/admin-nav-hover.png" alt="" ></li>
+                <li><a href="#">Billing</a><img src="images/admin-nav-hover.png" alt="" ></li>
+                <li><a href="#">Account</a><img src="images/admin-nav-hover.png" alt="" ></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- admin-menu end -->
+
+<!--main start -->
+<div id="main-wrap">
+	<div class="content-width clearfix">
+    	<div class="ideassubmit-section">
+        	<h2>Blog Submission</h2>
+            <div class="ideassubmit-navtab">
+            	<ul class="clearfix">
+                	<li><a href="#" class="active">submit to ideas</a></li>
+                </ul>
+            </div>
+            
+            <div class="upload-photograph-section">
+            	<h3>Upload photos, videos &amp; audio<i>&nbsp;</i></h3>
+                <a href="#" class="wedding-in" id="ideas-category"><em>Select an ideas category</em><span>&nbsp;</span></a>
+                <div class="select-option">
+                    <span>Select an ideas category</span>
+                    <div class="inner-option">
+                        <div class="scroll">
+                        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                        <div class="viewport">
+                            <div class="overview">
+                                <ul>
+                                    <li><a href="#">Real Weddings</a></li>
+                                    <li><a href="#">Style</a></li>
+                                    <li><a href="#" class="active">Design</a></li>
+                                    <li><a href="#">Health &amp; Beauty</a></li>
+                                    <li><a href="#">Crave</a></li>
+                                    <li><a href="#">Real Weddings</a></li>
+                                    <li><a href="#">Style</a></li>
+                                    <li><a href="#" class="active">Design</a></li>
+                                    <li><a href="#">Health &amp; Beauty</a></li>
+                                    <li><a href="#">Crave</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="uploadfile-section">
+            	<div class="uploadfile-area">
+                	<div class="upload-content">
+                		<em>&nbsp;</em>
+                    	<span>Drop files here to upload them</span>
+                        <a href="#" class="upload-file">Select files from your computer</a>
+                    </div>    
+                </div>
+                <div class="upload-thumbs">
+                	<div class="default-style">
+                    	<span>Have something to write for each image? Swtich to <a href="#">instructional style</a></span>
+                        <ul class="clearfix">
+                        	<li class="bar"><img src="images/thumbs-progressbar.jpg" alt="" ></li>
+                            <li><a href="#"><img src="images/thumbs-img.jpg" alt="" ></a><span><a href="#" class="icon">&nbsp;</a><a href="#" class="delete-icon">&nbsp;</a></span></li>
+                            <li><a href="#"><img src="images/thumbs-img.jpg" alt="" ></a><span><a href="#" class="icon music-icon">&nbsp;</a><a href="#" class="delete-icon">&nbsp;</a></span></li>
+                            <li><a href="#"><img src="images/thumbs-img.jpg" alt="" ></a><span><a href="#" class="icon">&nbsp;</a><a href="#" class="delete-icon">&nbsp;</a></span></li>
+                            <li><a href="#"><img src="images/thumbs-img.jpg" alt="" ></a><span><a href="#" class="icon music-icon">&nbsp;</a><a href="#" class="delete-icon">&nbsp;</a></span></li>
+                            <li><a href="#"><img src="images/thumbs-img.jpg" alt="" ></a><span><a href="#" class="icon">&nbsp;</a><a href="#" class="delete-icon">&nbsp;</a></span></li>
+                            <li class="last"><a href="#"><img src="images/thumbs-img.jpg" alt="" ></a><span><a href="#" class="icon music-icon">&nbsp;</a><a href="#" class="delete-icon">&nbsp;</a></span></li>
+                        </ul>
+                    </div>
+                    <div class="instructional-style clearfix" style="display:none;">
+                    	<span>Swtich back to <a href="#">default style</a></span>
+                        <div class="instructional-thumbs">
+                        	<ul>
+                            	<li class="bar"><img src="images/thumbs-progressbar.jpg" alt="" ></li>
+                            	<li><a href="#"><img src="images/thumbs-img.jpg" alt="" ></a><span><a href="#" class="icon">&nbsp;</a><a href="#" class="delete-icon">&nbsp;</a></span></li>
+                                <li><a href="#"><img src="images/thumbs-img.jpg" alt="" ></a><span><a href="#" class="icon music-icon">&nbsp;</a><a href="#" class="delete-icon">&nbsp;</a></span></li>
+                                <li><a href="#"><img src="images/thumbs-img.jpg" alt="" ></a><span><a href="#" class="icon img-icon">&nbsp;</a><a href="#" class="delete-icon">&nbsp;</a></span></li>
+                                <li><a href="#"><img src="images/thumbs-img.jpg" alt="" ></a><span><a href="#" class="icon img-icon">&nbsp;</a><a href="#" class="delete-icon">&nbsp;</a></span></li>
+                                <li class="last"><a href="#"><img src="images/thumbs-img.jpg" alt="" ></a><span><a href="#" class="icon img-icon">&nbsp;</a><a href="#" class="delete-icon">&nbsp;</a></span></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="instructionalerrow-nav">
+                        	<ul>
+                            	<li><a href="#" class="up">&nbsp;</a></li>	
+                                <li><a href="#">&nbsp;</a></li>	
+                            </ul>
+                            <ul>
+                            	<li><a href="#" class="up">&nbsp;</a></li>	
+                                <li><a href="#">&nbsp;</a></li>	
+                            </ul>
+                            <ul>
+                            	<li><a href="#" class="up">&nbsp;</a></li>	
+                                <li><a href="#">&nbsp;</a></li>	
+                            </ul>
+                            <ul>
+                            	<li><a href="#" class="up">&nbsp;</a></li>	
+                                <li><a href="#">&nbsp;</a></li>	
+                            </ul>
+                            <ul>
+                            	<li><a href="#" class="up">&nbsp;</a></li>	
+                                <li><a href="#">&nbsp;</a></li>	
+                            </ul>
+                            <ul>
+                            	<li><a href="#" class="up">&nbsp;</a></li>	
+                                <li><a href="#">&nbsp;</a></li>	
+                            </ul>
+                        </div>
+                        
+                        <div class="instructional-textarea">
+                        	<textarea rows="5" cols="22" class="textarea-field normal" placeholder="What you type here will show under this video on the blog"></textarea>
+                        </div>
+                        <div class="instructional-textarea">
+                        	<textarea rows="5" cols="22" class="textarea-field normal"> </textarea>
+                        </div>
+                        <div class="instructional-textarea">
+                        	<textarea rows="5" cols="22" class="textarea-field normal"> </textarea>
+                        </div>
+                        <div class="instructional-textarea">
+                        	<textarea rows="5" cols="22" class="textarea-field normal"> </textarea>
+                        </div>
+                        <div class="instructional-textarea">
+                        	<textarea rows="5" cols="22" class="textarea-field normal"> </textarea>
+                        </div>
+                        <div class="instructional-textarea">
+                        	<textarea rows="5" cols="22" class="textarea-field normal"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-right">
+                	<span>Uploading is easy!</span>
+                	<p>Just drag and drop the photos, videos or music files that you want toadd to your blog post</p>
+                </div>
+            </div>
+            
+            <div class="createblog-post">
+            	<h3>Create your ideas blog post<i>&nbsp;</i></h3>
+                <p class="ideas-field"><input type="text" class="error-field" placeholder="What is your blog post about?">
+                	<span class="countdown"></span> <span>characters left</span>
+                </p>
+                <p class="textarea-blogsection">
+                	<textarea rows="5" cols="22" class="blog-textarea" placeholder="What are some important highlights that you want to share?"></textarea>
+                </p>
+                <div class="tag-wrap">
+                	<input type="text" name="tags" class="tm-input"/>
+                    <div class="info-right">
+                		<p>Add up to 10 tags to help REDbrides find what they are looking for</p>
+                	</div>
+                </div>
+            </div>
+            
+            <div class="tellus-section">
+            	<h3>Tell us about yourself<i>&nbsp;</i></h3>
+                <a href="#" class="i-am" id="i-am-category"><em>I am a...</em><span>&nbsp;</span></a>
+                <div class="select-option">
+                    <span>Select a category</span>
+                    <div class="inner-option">
+                        <div class="scroll">
+                        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                        <div class="viewport">
+                            <div class="overview">
+                                <ul>
+                                    <li><a href="#">Bride</a></li>
+                                    <li><a href="#">Groom</a></li>
+                                    <li><a href="#" class="active">Photographer</a></li>
+                                    <li><a href="#">Videographer</a></li>
+                                    <li><a href="#">Interior Decorator</a></li>
+                                    <li><a href="#">Bride</a></li>
+                                    <li><a href="#">Groom</a></li>
+                                    <li><a href="#">Photographer</a></li>
+                                    <li><a href="#">Videographer</a></li>
+                                    <li><a href="#">Interior Decorator</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="youself-fields">
+                	<p>
+                        <input class="input-field two-fields" type="text" placeholder="First name">
+                        <input class="input-field two-fields last" type="text" placeholder="Last name">
+                    </p>
+                    <p><input class="input-field" type="text" placeholder="Email address"></p>
+                    <p>
+                        <input class="input-field two-fields" type="text" placeholder="Business name">
+                        <input class="input-field two-fields last" type="password" placeholder="Business Zipcode">
+                    </p>
+                    <p class="last"><input class="input-field" type="text" placeholder="http://....  your business website address"></p>
+                </div>
+            </div>
+            
+            <div class="credits-vendors">
+            	<div class="info-right">
+                	<span>Build a network.</span>
+                	<p>Crediting is not only good practice but also helps grow your professional network.</p>
+                    <p>When you credit a vendor, we'll notify them on your behalf</p>
+                </div>
+            	<h3>Credit vendors<i>&nbsp;</i></h3>
+                <div class="accordion-wrap" id="accordion">       
+                	<h3><a href="#">Photographer <img src="images/icon-tick.png" alt=""><span>&nbsp;</span></a></h3>
+                    <div class="accordion-detail">
+                        <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer</p>
+                    </div>
+                    
+                    <h3><a href="#">Cinematographer <img src="images/icon-tick.png" alt=""><span>&nbsp;</span></a></h3>
+                    <div class="accordion-detail">
+                        <p>Same as my information   <a href="#">change</a></p>
+                    </div>
+                    
+                    <h3><a href="#">Hair &amp; Makeup <img src="images/icon-tick.png" alt=""><span>&nbsp;</span></a></h3>
+                    <div class="accordion-detail accordian-field">
+                        <p>
+                        	<input class="input-field two-fields" type="text" placeholder="First name">
+                        	<input class="input-field two-fields last" type="text" placeholder="Last name">
+                    	</p>
+                    	<p><input class="input-field" type="text" placeholder="Email address"></p>
+                    	<p class="last">
+                        	<input class="input-field two-fields" type="text" placeholder="Business name">
+                        	<input class="input-field two-fields last" type="password" placeholder="Business Zipcode">
+                    	</p>
+                    </div>
+                    
+                    <h3 class="last"><a href="#">Disk Jockey <img src="images/icon-tick.png" alt=""><span>&nbsp;</span></a></h3>
+                    <div class="accordion-detail last">
+                    	<input class="input-field jockey-field" type="text" placeholder="Username or business name"><span class="user-img"><img src="images/user-img.jpg" alt=""></span>
+                        <div class="select-option">
+                            <div class="inner-option">
+                                <div class="scroll">
+                                <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                                <div class="viewport">
+                                    <div class="overview">
+                                        <ul>
+                                            <li><a href="#">Bride</a></li>
+                                            <li><a href="#">Groom</a></li>
+                                            <li><a href="#" class="active">Photographer</a></li>
+                                            <li><a href="#">Videographer</a></li>
+                                            <li><a href="#">Interior Decorator</a></li>
+                                            <li><a href="#">Bride</a></li>
+                                            <li><a href="#">Groom</a></li>
+                                            <li><a href="#">Photographer</a></li>
+                                            <li><a href="#">Videographer</a></li>
+                                            <li><a href="#">Interior Decorator</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <span>Can't find this vendor? Add manually</span>
+                		</div>
+                    </div>
+            	</div>
+            </div>
+            
+            <div class="requierd-para">
+            	<p>Please fill out the required fields in red above before submitting.</p>
+            </div>
+            
+            <div class="submit-review clearfix">
+            	<a class="btn primary-btn large" href="#">Submit for Review</a>
+                <span>By clicking the "Submit for Review" button,<br> I accept REDbrides' Terms of Service and Privacy Policy.</span>
+            </div>
+        </div>
+	</div>
+</div>  
+<!--main end -->
+
+
+
+</body>
+</html>

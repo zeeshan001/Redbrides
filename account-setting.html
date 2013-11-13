@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html>
+<!--<![endif]-->
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    
+    <title>Account Setting</title>
+    
+    <link type="text/css" rel="stylesheet/less" href="css/style.less" />
+    
+    <!--[if lte IE 8]>
+    <link type="text/css" rel="stylesheet" href="css/ie.css" />
+    <script type="text/javascript" src="js/modernizr.min.js"></script>
+    <![endif]-->
+    
+    <!--[if lte IE 6]>
+    <script type="text/javascript" src="js/belated.js"></script>
+    <![endif]-->
+    
+    
+    <script type="text/javascript" src="js/less-1.0.35.min.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/hzz5wuk.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script>
+		$(function() {
+			$('.tabs a').click(function(){
+			$('.admin-tab').fadeOut();
+			$(this.hash).fadeIn();
+			$('.tabs a').removeClass('active');
+			$(this).addClass('active');
+			return  false;
+			});
+		});
+	</script>
+    
+</head>
+
+<body id="account-setting-page">
+
+
+<!--header start -->
+<div id="header-wrap">
+	<div class="content-width">
+        <header id="header" class="clearfix">
+        	<div class="logo-nav clearfix">
+        		<div class="logo-section">
+            		<a href="#" class="logo"><img src="images/logo.png" alt="" ></a>
+            	</div><!-- logo ends -->
+                <div class="nav">
+                	<ul class="clearfix">
+                    	<li><a href="#">Home</a></li>
+                        <li><a href="#" class="active">Showcase</a></li>
+                        <li><a href="#">Local Vendors</a></li>
+                        <li><a href="#">Ideas</a></li>
+                    </ul>
+                </div><!-- nav ends -->
+            </div>
+            <!--logo-nav ends -->
+            <div class="notification-login clearfix">
+            	<div class="notifications">
+                	<ul>
+                    	<li>
+                        	<a href="#" class="mail"></a>
+                        </li>
+                        <li>
+                        	<a href="#" class="bell"></a>
+                        </li>
+                        <li>
+                        	<a href="#" class="collections"></a>
+                        </li>
+                        <li class="last">
+                        	<a href="#" class="shopping"></a>
+                        </li>
+                    </ul>
+                </div><!-- notifications ends -->
+                <div class="login-section">
+                	<a href="#" class="login">Preti Zinta</a>
+                    <div class="signedin-section">
+                    	<ul>
+                        	<li><a href="#">Account Settings</a></li>
+                            <li><a href="#">Go PRO</a></li>
+                            <li><a href="#">Admin Panel</a></li>
+                            <li><a href="#">Sign Out</a></li>
+                        </ul>
+                        <span class="polygon-1">&nbsp;</span>
+                    </div>
+                </div><!-- login sectin ends -->
+            </div>
+            <!--notificaiton-login ends -->
+        </header>
+    </div>
+</div>
+<!--header end -->
+
+<!-- admin-menu start -->
+<div class="adminmenu-wrap">
+	<div class="content-width">
+    	<div class="adminmenu">
+        	<ul class="clearfix">
+            	<li class="active active-2"><a href="#">Items</a><img src="images/admin-nav-hover.png" alt="" ></li>
+                <li><a href="#">Jobs</a><img src="images/admin-nav-hover.png" alt="" ></li>
+                <li><a href="#">Orders</a><img src="images/admin-nav-hover.png" alt="" ></li>
+                <li><a href="#">Blog It!</a><img src="images/admin-nav-hover.png" alt="" ></li>
+                <li><a href="#">Billing</a><img src="images/admin-nav-hover.png" alt="" ></li>
+                <li><a href="#" class="account">Account</a><img src="images/admin-nav-hover.png" alt="" ></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- admin-menu end -->
+
+<!--main start -->
+<div id="main-wrap">
+	<div class="content-width">
+    	<div class="admin-main">
+        	<div class="account-setting">
+            	<h1>Account Settings</h1>
+                <div class="sub-menu tabs">
+                	<ul class="clearfix">
+                    	<li><a href="#profile-tab" class="active">profile settings</a></li>
+                        <li><a href="#privacy-tab">PRIVACY settings</a></li>
+                        <li><a href="#password-tab">change password</a></li>
+                        <li><a href="#email-tab">email notifications</a></li>
+                        <li><a href="#post-pro-tab" class="pro-menu">PRO</a></li>
+                    </ul>
+                </div>
+                <div class="profile-setting admin-tab" id="profile-tab" style="display:block;">
+                	<p class="clearfix">
+                    	<label>Email</label>
+                        <input class="input-field setting-fields" type="text" placeholder="bride@gmail.com">
+                    </p>
+                    <p class="clearfix">
+                    	<label>Business Username</label>
+                        <input class="setting-fields input-field" type="text" placeholder="samplest.redbrides.com">
+                    </p>
+                    <p class="clearfix">
+                    	<label>First name</label>
+                        <input class="setting-fields input-field" type="text" placeholder="Neha">
+                    </p>
+                    <p class="clearfix">
+                    	<label>Last name</label>
+                        <input class="setting-fields input-field" type="text" placeholder="Kumar">
+                    </p>
+                    <p class="clearfix">
+                    	<label>Company name</label>
+                        <input class="setting-fields input-field" type="text" placeholder="Name of company">
+                    </p>
+                    <p class="clearfix">
+                    	<label>Business Zipcode</label>
+                        <input class="setting-fields input-field" type="text" placeholder="97224">
+                    </p>
+                    <p class="clearfix">
+                    	<label>Business Phone</label>
+                        <input class="setting-fields input-field" type="text" placeholder="720-203-2938">
+                    </p>
+                    <p class="clearfix">
+                    	<label>Profile picture</label>
+                        <a href="#" class="prifle-pic"><img src="images/profile-pic.jpg" alt="" ></a>
+                        <a href="#" class="btn-default silver-btn large">Upload your photo</a><br>
+                        <a href="#" class="btn-default silver-btn large">Refresh from Facebook</a>
+                    </p>
+                    <p class="clearfix">
+                    	<label>Facebook</label>
+                        <em class="switch switch-btn">
+                            <input type="checkbox" checked>
+                            <label><i></i></label>
+                        </em>
+                        <span>Login with Facebook</span>
+                    </p>
+                    <p class="clearfix">
+                    	<label>&nbsp;</label>
+                         <em class="switch switch-btn">
+                            <input type="checkbox" checked>
+                            <label><i></i></label>
+                        </em>
+                        <span>Publish activity on Facebook</span>
+                    </p>
+                    <p class="clearfix">
+                    	<label>Deactivate</label>
+                        <a href="#" class="btn-default silver-btn large">Deactivate Account</a>
+                    </p>
+                    <p class="clearfix">
+                    	<label>&nbsp;</label>
+                        <span class="border-btn-top">
+                        <a href="#" class="btn primary-btn large save-changes-btn">Save Changes</a>
+                        </span>
+                    </p>
+                </div>
+                <!-- profile setting ends -->
+                
+                <div class="privacy-setting admin-tab" id="privacy-tab">
+                    <p class="clearfix">
+                        <label>Activity Broadcasts</label>
+                        <em class="switch switch-btn">
+                            <input type="checkbox" checked>
+                            <label><i></i></label>
+                        </em>
+                    </p>
+                    <p class="clearfix">
+                        <label>Profile Photo Visibility</label>
+                        <a id="my-vendore" class="my-vendore" href="#">
+                      		<em>My Vendors</em>
+                        	<span>&#160;</span>
+                        </a>
+                    </p>
+                    <p class="clearfix">
+                        <label>&nbsp;</label>
+                        <span class="border-btn-top">
+                        <a href="#" class="btn primary-btn large save-changes-btn">Save Changes</a>
+                        </span>
+                    </p>
+                </div>
+                <!-- privacy setting ends -->
+                
+                <div class="password-change admin-tab" id="password-tab">
+                	<p class="clearfix current-password">
+                    	<label>Current password</label>
+                        <input class="setting-fields input-field" type="password" placeholder="redbrides">
+                    </p>
+                    <p class="clearfix forgot-password">
+                        <label>&nbsp;</label>
+                        <a href="#">Forgot your password?</a>
+                    </p>
+                    <p class="clearfix">
+                    	<label>New password</label>
+                        <input class="setting-fields input-field" type="password" placeholder="redbrides">
+                    </p>
+                    <p class="clearfix">
+                    	<label>Verify password</label>
+                        <input class="setting-fields input-field" type="password" placeholder="redbrides">
+                    </p>
+                    <p class="clearfix">
+                        <label>&nbsp;</label>
+                        <span class="border-btn-top">
+                        <a href="#" class="btn primary-btn large save-changes-btn">Save Changes</a>
+                        </span>
+                    </p>
+                </div>
+                <!-- password change ends -->
+                
+                <div class="email-notifications admin-tab" id="email-tab">
+                	<p class="clearfix">
+                    	<label>Following</label>
+                        <em class="switch switch-btn">
+                            <input type="checkbox" checked>
+                            <label><i></i></label>
+                        </em>
+                        <span>When someone follows me</span>
+                    </p>
+                    <p class="clearfix">
+                    	<label>Posts</label>
+                        <em class="switch switch-btn">
+                            <input type="checkbox" checked>
+                            <label><i></i></label>
+                        </em>
+                        <span>When someone replies to my post</span>
+                    </p>
+                    <p class="clearfix">
+                    	<label>Messges</label>
+                        <em class="switch switch-btn">
+                            <input type="checkbox" checked>
+                            <label><i></i></label>
+                        </em>
+                        <span>When someone sends me a message</span>
+                    </p>
+                    <p class="clearfix">
+                    	<label>Feedback</label>
+                        <em class="switch switch-btn">
+                            <input type="checkbox" checked>
+                            <label><i></i></label>
+                        </em>
+                        <span>When someone leaves me a feedback</span>
+                    </p>
+                    <p class="clearfix">
+                    	<label>Job Awards</label>
+                        <em class="switch switch-btn">
+                            <input type="checkbox" checked>
+                            <label><i></i></label>
+                        </em>
+                        <span>When someone awards me a job</span>
+                    </p>
+                    <p class="clearfix">
+                    	<label>Love It!</label>
+                        <em class="switch switch-btn">
+                            <input type="checkbox" checked>
+                            <label><i></i></label>
+                        </em>
+                        <span>When someone "loves" my item by clicking "Love It!"</span>
+                    </p>
+                    <p class="clearfix">
+                    	<label>Add It!</label>
+                        <em class="switch switch-btn">
+                            <input type="checkbox" checked>
+                            <label><i></i></label>
+                        </em>
+                        <span>When someone adds my item to their collectings by clicking "Add It!"</span>
+                    </p>
+                    <p class="clearfix">
+                    	<label>Comments</label>
+                        <em class="switch switch-btn">
+                            <input type="checkbox" checked>
+                            <label><i></i></label>
+                        </em>
+                        <span>When someone posts a comment on my item or my profile page</span>
+                    </p>
+                    <p class="clearfix">
+                    	<label>Ideas</label>
+                        <em class="switch switch-btn">
+                            <input type="checkbox" checked>
+                            <label><i></i></label>
+                        </em>
+                        <span>When a submitted Ideas blog gets published</span>
+                    </p>
+                    <p class="clearfix">
+                    	<label>Credits</label>
+                        <em class="switch switch-btn">
+                            <input type="checkbox" checked>
+                            <label><i></i></label>
+                        </em>
+                        <span>When I am credited in the Ideas section on a published Ideas blog</span>
+                    </p>
+                </div>
+                <!-- email-notification ends -->
+                
+                <!--<div class="pre-pro admin-tab" id="pro-tab">
+                	<div class="pre-pro-section clearfix">
+                    	<h2>Upgrade your Redbrides experience with these additional features</h2>
+                        <div class="features clearfix">
+                        	<div class="features-img">
+                            </div>
+                            <div class="features-detail">
+                            	<h2>Showcase</h2>
+                                <p>It is a long established fact that a reader will be distracted by the readable content content here,</p>
+                            </div>
+                        </div>
+                        <div class="features clearfix second-feature">
+                        	<div class="features-img">
+                            </div>
+                            <div class="features-detail">
+                            	<h2>Local Vendors</h2>
+                                <p>It is a long established fact that a reader will be distracted by the readable content.</p>
+                            </div>
+                        </div>
+                        <div class="features clearfix">
+                        	<div class="features-img">
+                            </div>
+                            <div class="features-detail">
+                            	<h2>Multiple Location Marketing</h2>
+                                <p>It is a long established fact that a reader will be distracted by the readable content content here, It is a long established.</p>
+                            </div>
+                        </div>
+                        <div class="features clearfix second-feature">
+                        	<div class="features-img">
+                            </div>
+                            <div class="features-detail">
+                            	<h2>Multiple Services Offering</h2>
+                                <p>It is a long established fact that a reader will be distracted by the readable content content here,</p>
+                            </div>
+                        </div>
+                        <div class="features clearfix last-features">
+                        	<div class="features-img">
+                            </div>
+                            <div class="features-detail">
+                            	<h2>PRO Badge</h2>
+                                <p>It is a long established fact that a reader will be distracted by the readable content content here,</p>
+                            </div>
+                        </div>
+                        <div class="features clearfix last-features second-feature">
+                        	<div class="features-img">
+                            </div>
+                            <div class="features-detail">
+                            	<h2>Multiple Services Offering</h2>
+                                <p>It is a long established fact that a reader will be distracted by the readable content content here, It is a long established.</p>
+                            </div>
+                        </div>
+                        <div class="cl"></div>
+                        <div class="pro-free-btn">
+                        	<a href="#" class="pro-btn">Try PRO Free</a>
+                        </div>
+                    </div>
+                    
+                    <div class="pro-bot clearfix">
+                    	<div class="fine-print">
+                        	<h4>THE FINE PRINT</h4>
+                            <div class="print-detail">
+                            	<p>It is a long established fact that a reader will be distracted by the redable content. It is a long established fact that a reader will be distracted by the redable content.</p>
+                            </div>
+                        </div>
+                        <div class="pro-faq">
+                        	<h4>PRO FAQ</h4>
+                            <div class="pro-faq-detail">
+                            	<p><strong>What is the refund policy?</strong>It is a long established fact that a reader
+will be distracted by the redable content.</p>
+								<p><strong>What is the refund policy?</strong>It is a long established fact that a reader
+will be distracted by the redable content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!--pre-pro ends -->
+                
+                <div class="post-pro admin-tab" id="post-pro-tab">
+                	<div class="post-pro-section clearfix">
+                    	<div class="post-content">
+                        	<div class="post-features clearfix">
+                        		<div class="post-features-img">
+                            	</div>
+                            	<div class="post-features-detail">
+                            		<h2>Showcase</h2>
+                                	<p>It is a long established fact that a reader will be distracted by the readable content content here,</p>
+                            	</div>
+                        	</div>
+                            <div class="post-features clearfix">
+                        		<div class="post-features-img">
+                            	</div>
+                            	<div class="post-features-detail">
+                            		<h2>Multiple Location Marketing</h2>
+                                	<p>It is a long established fact that a reader will be distracted by the readable content content here,</p>
+                            	</div>
+                        	</div>
+                            <div class="post-features clearfix">
+                        		<div class="post-features-img">
+                            	</div>
+                            	<div class="post-features-detail">
+                            		<h2>PRO Badge</h2>
+                                	<p>It is a long established fact that a reader will be distracted by the readable content content here,</p>
+                            	</div>
+                        	</div>
+                            <div class="post-features clearfix">
+                        		<div class="post-features-img">
+                            	</div>
+                            	<div class="post-features-detail">
+                            		<h2>Local Vendors</h2>
+                                	<p>It is a long established fact that a reader will be distracted by the readable content content here,</p>
+                            	</div>
+                        	</div>
+                            <div class="post-features clearfix">
+                        		<div class="post-features-img">
+                            	</div>
+                            	<div class="post-features-detail">
+                            		<h2>Multiple Services Offering</h2>
+                                	<p>It is a long established fact that a reader will be distracted by the readable content content here,</p>
+                            	</div>
+                        	</div>
+                            <div class="post-features clearfix">
+                        		<div class="post-features-img">
+                            	</div>
+                            	<div class="post-features-detail">
+                            		<h2>Multiple Location Marketing</h2>
+                                	<p>It is a long established fact that a reader will be distracted by the readable content content here,</p>
+                            	</div>
+                        	</div>
+                        </div>
+                        <div class="post-pro-sidebar">
+                        	<p>
+                            	<strong>You're a<span>PRO</span></strong>and we love you for that.
+                            </p>
+                            <p>We're always working on bringng new features &amp; improving the current ones.</p>
+                            <p><span class="feedback-heading">We'd like to hear from you</span> <a href="#">Give feedback</a></p>
+                        </div>
+                    </div>
+                    <div class="pro-bot clearfix">
+                    	<div class="fine-print">
+                        	<h4>THE FINE PRINT</h4>
+                            <div class="print-detail">
+                            	<p>It is a long established fact that a reader will be distracted by the redable content. It is a long established fact that a reader will be distracted by the redable content.</p>
+                            </div>
+                        </div>
+                        <div class="pro-faq">
+                        	<h4>PRO FAQ</h4>
+                            <div class="pro-faq-detail">
+                            	<p><strong>What is the refund policy?</strong>It is a long established fact that a reader
+will be distracted by the redable content.</p>
+								<p><strong>What is the refund policy?</strong>It is a long established fact that a reader
+will be distracted by the redable content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--post-pro ends -->
+            </div><!-- account setting ends -->
+        </div>
+	</div>
+</div>  
+<!--main end -->
+
+
+<!--footer start -->
+<div id="footer-wrap">
+	<div class="content-width">
+        <footer id="footer" class="clearfix">
+        	<div class="copyright-section">
+                <ul class="clearfix">
+                	<li>© 2013 Viral Rocket, Inc.</li>
+                	<li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+            	<ul class="clearfix">
+                	<li><a href="#">Shop</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</div>
+<!--footer end -->
+
+
+</body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html>
+<!--<![endif]-->
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    
+    <title>Pop Ups</title>
+    
+    <link type="text/css" rel="stylesheet/less" href="css/style.less" />
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/default.date.css">
+    
+    <!--[if lte IE 8]>
+    <link type="text/css" rel="stylesheet" href="css/ie.css" />
+    <script type="text/javascript" src="js/modernizr.min.js"></script>
+    <![endif]-->
+    
+    <!--[if lte IE 6]>
+    <script type="text/javascript" src="js/belated.js"></script>
+    <![endif]-->
+    
+    
+    <script type="text/javascript" src="js/less-1.0.35.min.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/hzz5wuk.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="js/picker.js"></script>
+    <script src="js/picker.date.js"></script>
+    <script src="js/jquery.autosize.js"></script>
+    <script type="text/javascript" src="js/scrool-bar.js"></script>
+    <script>
+		$(function() {
+			// scrollbar
+			$('.scroll').tinyscrollbar();
+			
+			$(".location-alert .wedding-in").click(function() {
+				$(".location-alert .select-option").fadeIn();
+				$('.scroll').tinyscrollbar();
+				return false
+			});
+			
+			$(".location-alert .overview li a").click(function() {
+				var country = $(this).html();
+				$("#countries em").html(country);
+				$(this).parents(".location-alert .select-option").fadeOut();
+				$(".location-alert .overview li a").removeClass('active');
+				$(this).addClass('active');
+				return false
+			});
+			
+			$("body").click(function() {
+				$(".location-alert .select-option").fadeOut();
+			});
+			
+			$(".location-alert .select-option").click(function(e) {
+				e.stopPropagation();
+			});
+			
+			
+			
+			// clander
+			var $input = $( /*'.date'*/ '.datepicker' ).pickadate({
+				// container: '.outlet',
+				//disable: [ 1, 2, 7, [2013,6,1] ],
+				selectYears: false,
+				selectMonths: false,
+				formatSubmit: 'yyyy-mm-dd',
+				clear: 'Undecided',
+				today: ''
+			});
+					
+			var picker = $input.pickadate('picker');
+			
+			$('.normal').autosize();
+			
+		});
+	</script>
+    
+</head>
+
+<body id="popups-page">
+
+
+<!--header start -->
+<div id="header-wrap">
+	<div class="content-width">
+        <header id="header" class="clearfix">
+        	<div class="logo-nav clearfix">
+        		<div class="logo-section">
+            		<a href="#" class="logo"></a>
+            	</div><!-- logo ends -->
+                <div class="nav">
+                	<ul class="clearfix">
+                    	<li><a href="#">Home</a></li>
+                        <li><a href="#" class="active">Showcase</a></li>
+                        <li><a href="#">Local Vendors</a></li>
+                        <li><a href="#">Ideas</a></li>
+                    </ul>
+                </div><!-- nav ends -->
+            </div>
+            <!--logo-nav ends -->
+            <div class="notification-login clearfix">
+            	<div class="notifications">
+                	<ul>
+                    	<li>
+                        	<a href="#" class="mail"></a>
+                            <span class="red-cricle">1</span>
+                        </li>
+                        <li>
+                        	<a href="#" class="bell"></a>
+                            <span class="red-cricle">1</span>
+                        </li>
+                        <li>
+                        	<a href="#" class="collections"></a>
+                        </li>
+                        <li class="last">
+                        	<a href="#" class="shopping"></a>
+                            <span class="red-cricle">1</span>
+                        </li>
+                    </ul>
+                </div><!-- notifications ends -->
+                <div class="login-section">
+                	<a href="#" class="login">Preti Zinta</a>
+                    <div class="signedin-section">
+                    	<ul>
+                        	<li><a href="#">Account Settings</a></li>
+                            <li><a href="#">Go PRO</a></li>
+                            <li><a href="#">Admin Panel</a></li>
+                            <li><a href="#">Sign Out</a></li>
+                        </ul>
+                        <span class="polygon-1">&nbsp;</span>
+                    </div>
+                </div><!-- login sectin ends -->
+            </div>
+            <!--notificaiton-login ends -->
+        </header>
+    </div>
+</div>
+<!--header end -->
+
+<!--sub-header -->
+<div id="subheader-wrap">
+	<div class="content-width">
+    	<div id="subheader" class="clearfix">
+        	<div class="location">
+            	<a href="#" id="countries"><em>Michigan</em><span class="location-bg">&nbsp;</span></a>
+            </div><!-- location ends -->
+            <div class="searcharea clearfix">
+            	<input type="text" placeholder="Search..." class="searchbar " >
+                <div class="search-dropdown">
+                	<ul>
+                    	<li>
+                    		<a href="#" class="select-search">Bridal Wear<span class="select-bg">&nbsp;</span></a>
+                        	<ul class="search-options">
+                        		<li><a href="#" class="search-active">Bridal Wear<span>&nbsp;</span></a></li>
+                            	<li><a href="#">All Categories<span>&nbsp;</span></a></li>
+                            	<li><a href="#">Briday Wear<span>&nbsp;</span></a></li>
+                            	<li><a href="#">Ceremony &amp; Reception<span>&nbsp;</span></a></li>
+                            	<li><a href="#">Flowers &amp; Decor<span>&nbsp;</span></a></li>
+                            	<li><a href="#">Jewelry<span>&nbsp;</span></a></li>
+                            	<li><a href="#">Unique Services<span>&nbsp;</span></a></li>
+                            	<li><a href="#">Hair &amp; Beauty<span>&nbsp;</span></a></li>
+                    		</ul>
+                    	</li>     
+                    </ul>    
+                </div>    
+            </div><!-- searcharea ends -->
+            <div class="searchbtn">
+            	<a href="#" class="btn primary-btn large">Search</a>
+            </div><!-- searchbtn edns -->
+        </div>
+    </div>
+</div>
+<!--sub-header ends -->
+
+<!--all pop-ups start -->
+
+<div class="overlay"></div>
+<div class="popups suggestion-popups">
+	<div class="popup-header">
+		<h2>To: REDbrides</h2>
+    </div>    
+    <div class="popup-main clearfix">
+    	<div class="popup-textarea">
+        	<textarea rows="7" cols="70"  class="normal" placeholder="I think it would be great if you..." ></textarea>
+        </div>
+        <div class="send-btn">
+        	<a class="btn primary-btn large invite-btn" href="#">Send Message</a>
+        </div>
+    </div>
+    <div class="popup-footer">
+    	<p>Thank you for taking this time. It really helps in providing a better service to our customers.</p>
+    </div>
+    <a href="#" class="cancel-btn"></a>
+</div>
+
+<div class="popups location-bubble" style="position:absolute; top:550px;">
+	<div class="location-content clearfix">
+    	<p>You're currently browsing outside of your wedding area.</p>
+        <a href="#">change wedding location</a>
+    </div>
+	<span class="popup-arrow"></span>
+    <a href="#" class="bubble-cancel"></a>
+</div>
+
+<div class="popups confirm-del clearfix" style="position:absolute; top:650px;">
+	<h2>Confirm Deletion</h2>
+    <p>Are you sure you want to delete this?</p>
+    <div class="cancelokey-btn">
+    	<a class="btn blackish-btn large" href="#">Cancel</a>
+		<a class="btn primary-btn large" href="#">Yes</a>
+    </div>
+	<a href="#" class="cancel-btn"></a>
+</div>
+
+<div class="popups remove-advertising clearfix" style="position:absolute; top:840px;">
+	<h2>Remove advertising location</h2>
+    <p>If you remove your last advertising location, no one can find you! Please first add another advertising location to replace this one with.</p>
+    <div class="okey-btn">
+		<a class="btn primary-btn large" href="#">Okay</a>
+    </div>
+	<a href="#" class="cancel-btn"></a>
+</div>
+
+<div class="popups removewedding-services clearfix" style="position:absolute; top:1072px;">
+	<h2>Remove wedding service</h2>
+    <p>If you remove your last wedding service, no one can find you! Please first add another wedding service to replace this one with.</p>
+    <div class="okey-btn">
+		<a class="btn primary-btn large" href="#">Okay</a>
+    </div>
+	<a href="#" class="cancel-btn"></a>
+</div>
+
+<div class="popups downgradeaccount clearfix" style="position:absolute; top:1280px;">
+	<h2>Downgrade Account</h2>
+    <p>With the no-cost Basic membership, you can have one service and one location selected. Please delete additional services and locations before downgrading.</p>
+    <div class="okey-btn">
+		<a class="btn primary-btn large" href="#">Okay</a>
+    </div>
+	<a href="#" class="cancel-btn"></a>
+</div>
+
+<div class="popups upgradeaccount clearfix" style="position:absolute; top:1525px;">
+	<h2>Upgrade Account</h2>
+    <p>This feature is available to our PRO wedding vendors. To learn more about PRO membership, click the “Benefits of PRO” button below.</p>
+    <div class="cancelbenefits-btn">
+    	<a class="btn blackish-btn large" href="#">Cancel</a>
+		<a class="btn primary-btn large" href="#">Benefits of PRO</a>
+    </div>
+	<a href="#" class="cancel-btn"></a>
+</div>
+
+<div class="popups location-alert clearfix" style="position:absolute; top:1762px;">
+	<h2>Redbrides new location alert</h2>
+    <p>Set up an email alert to be notified when Redbrides service launches in the area where you are getting married at.</p>
+    <div class="locationalert-fields">
+    	<p><input class="input-field" type="text" placeholder="First name"></p>
+        <p><input class="input-field" type="text" placeholder="Email address"></p>
+        <div class="alert-weddingfields">
+        	<a id="countries" class="wedding-in" href="#"><em>You’re wedding is in...</em><span>&#160;</span></a>
+            <div class="select-option">
+            	<span class="getting-married">Select the state you are getting married in</span>
+                <div class="inner-option">
+                    <div class="scroll">
+                        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                        <div class="viewport">
+                            <div class="overview">
+                                <ul>
+                                    <li><a href="#">Alabama</a></li>
+                                    <li><a href="#">Alaska</a></li>
+                                    <li><a href="#">Arizona</a></li>
+                                    <li><a href="#">Arkansas</a></li>
+                                    <li><a href="#">California</a></li>
+                                    <li><a href="#">Colorado</a></li>
+                                    <li><a href="#">Connecticut</a></li>
+                                    <li><a href="#">Delaware</a></li>
+                                    <li><a href="#">Florida</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#">Indiana</a></li>
+                                    <li><a href="#">Iowa</a></li>
+                                    <li><a href="#">Kansas</a></li>
+                                    <li><a href="#">Kentucky</a></li>
+                                    <li><a href="#">Louisiana</a></li>
+                                    <li><a href="#">Maine</a></li>
+                                    <li><a href="#">Maryland</a></li>
+                                    <li><a href="#">Massachusetts</a></li>
+                                    <li><a href="#">Michigan</a></li>
+                                </ul>
+                                <ul class="last">
+                                    <li><a href="#">Nebraska</a></li>
+                                    <li><a href="#">Nevada</a></li>
+                                    <li><a href="#">Nevada</a></li>
+                                    <li><a href="#">New Jersey</a></li>
+                                    <li><a href="#">New Mexico</a></li>
+                                    <li><a href="#">New York</a></li>
+                                    <li><a href="#">North Carolina</a></li>
+                                    <li><a href="#">North Dakota</a></li>
+                                    <li><a href="#">Ohio</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+        	</div>
+            <input id="input_01" class="datepicker wedding-date input-field" name="date" type="date" placeholder="You’re wedding date" data-valuee="2013-07-21">
+        </div>
+    </div>
+    <div class="notify-btn">
+		<a class="btn primary-btn large" href="#">Notify me!</a>
+    </div>
+	<a href="#" class="cancel-btn"></a>
+</div>
+
+<div class="popups deactivateaccount clearfix" style="position:absolute; top:2158px;">
+	<h2>Deactivate Account</h2>
+    <p>If you deactivate your account:</p>
+    <div class="deactivate-rules">
+    	<ul>
+        	<li>Vendors will not be able to message you or find you in their followers list.</li>
+            <li>The comments you’ve made on the Redbrides community will still apear.Your items will disappear.</li>
+            <li>We save your settings just in case you want to come back to Redbrides at some point.</li>
+        </ul>
+         <p>If you want to continue with deactivating your account, please click the checkbox below.</p>
+         <p class="checkbox-option"><input type="checkbox" value="" class="checkbox" ><span>Yes, I want to deactivate my account.</span></p>
+    </div>
+    <div class="canceldeactivate-btn">
+    	<a class="btn blackish-btn large" href="#">Cancel</a>
+		<a class="btn primary-btn large" href="#">Deactivate</a>
+    </div>
+	<a href="#" class="cancel-btn"></a>
+</div>
+
+<div class="popups deactivateaccount deactivateaccount-2 clearfix" style="position:absolute; top:2540px;">
+	<h2>Deactivate Account</h2>
+    <p>If you deactivate your account:</p>
+    <div class="deactivate-rules">
+    	<ul>
+        	<li>Your business page will disappear from Redbrides immediately.</li>
+            <li>Brides and vendors on Redbrides will not be able to search for you, you will also disappear from their following list.</li>
+            <li>Your items will disappear.</li>
+            <li>We save your business page and items (photos, videos or music files) just in case you want to come back to Redbrides at some point.</li>
+        </ul>
+        <p>We recommend <a href="#">downgrading</a> to the Basic plan rather than deactivating so Brides are still able to find you for their wedding needs.</p>
+         <p>If you want to continue with deactivating your account, please click the checkbox below.</p>
+         <p class="checkbox-option"><input type="checkbox" value="" class="checkbox" ><span>Yes, I want to deactivate my account.</span></p>
+    </div>
+    <div class="canceldeactivate-btn">
+    	<a class="btn blackish-btn large" href="#">Cancel</a>
+		<a class="btn primary-btn large" href="#">Deactivate</a>
+    </div>
+	<a href="#" class="cancel-btn"></a>
+</div>
+
+<div class="popups acceptjob clearfix" style="position:absolute; top:3030px;">
+	<h2>Accept Job</h2>
+    <p>By accepting a job from [bride name], you agree to perform the<br> discussed service. The bride will be able to leave you a review on your profile once the job is complete.</p>
+    <p class="completion-date">Job completion date: June 23, 2012</p>
+    <div class="declineaccept-btn">
+    	<a class="btn blackish-btn large" href="#">Decline</a>
+		<a class="btn primary-btn large" href="#">Accept</a>
+    </div>
+	<a href="#" class="cancel-btn"></a>
+</div>
+
+<div class="popups awardjob" style="position:absolute; top:3300px;">
+	<h2>Award Job</h2>
+    <p>By awarding a job to Soniya Design Studios, you will be able to leave a review once the job is completed.</p>
+    <div class="completiondate-section clearfix">
+    	 <input id="input_01" class="datepicker wedding-date input-field" name="date" type="date" placeholder="job completion date" data-valuee="2013-07-21">
+		<a class="btn primary-btn large okey-btn" href="#">Okay</a>
+    </div>
+	<a href="#" class="cancel-btn"></a>
+</div>
+
+<div class="popups before-sending clearfix" style="position:absolute; top:3547px;">
+	<p>To start communication between yourself and the vendor, you must follow the vendor first before you or the vendor is able to send a message.</p>
+    <p>When you stop following the vendor, the vendor is no longer able to send you a message.</p>
+    <div class="okey-btn">
+		<a class="btn primary-btn large" href="#">Okay</a>
+    </div>
+</div>
+
+<div class="popups messages" style="position:absolute; top:3795px;">
+	<div class="messages-header">
+    	<h2>New Message: Soniya Studios<span>Tip: before a business can send you a message, you have to be following them. <a href="#">Learn more</a></span></h2>
+    </div>
+    <div class="error-section">
+    	<p>You can’t send a message to a user who you are not following.</p>
+    </div>
+    <div class="postmessages-section clearfix">
+    	<textarea rows="5" cols="22" class="normal"></textarea>
+        <div class="post-btn">
+        	<a class="btn primary-btn large" href="#">Post Message</a>
+            <a href="#" class="attach-file">&nbsp;</a>
+        </div>
+    </div>
+    <div class="newmessages-section">
+        <div class="select-option">
+            <div class="inner-option">
+                <div class="scroll">
+                    <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                    <div class="viewport">
+                        <div class="overview">
+                            <div class="new-messages">
+                                <div class="messages-heading clearfix">
+                                    <div class="name">
+                                    	<h3>Sunny Kapoor</h3>
+                                    </div>
+                                    <div class="date-section">
+                                    	<span>19 Jun at 21:34</span>
+                                    </div>
+                                </div>
+                                <div class="message-detail">
+                                	<p class="message-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                    <p>Thank you!</p>
+                                    <p>Sunny</p>
+                                </div>
+                            </div>
+                            
+                            <div class="new-messages">
+                                <div class="messages-heading clearfix">
+                                    <div class="name">
+                                    	<h3>Sunny Kapoor</h3>
+                                    </div>
+                                    <div class="date-section">
+                                    	<span>19 Jun at 21:34</span>
+                                    </div>
+                                </div>
+                                <div class="message-detail">
+                                	<p class="message-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                    <p>Thank you!</p>
+                                    <p>Sunny</p>
+                                </div>
+                            </div>
+                            
+                            <div class="new-messages">
+                                <div class="messages-heading clearfix">
+                                    <div class="name">
+                                    	<h3>Sunny Kapoor</h3>
+                                    </div>
+                                    <div class="date-section">
+                                    	<span>19 Jun at 21:34</span>
+                                    </div>
+                                </div>
+                                <div class="message-detail">
+                                	<p class="message-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                    <p>Thank you!</p>
+                                    <p>Sunny</p>
+                                </div>
+                            </div>
+                            
+                            <div class="new-messages last-message">
+                                <div class="messages-heading clearfix">
+                                    <div class="name">
+                                    	<h3>Katherine West</h3>
+                                    </div>
+                                    <div class="date-section">
+                                    	<span>Saturday</span>
+                                    </div>
+                                </div>
+                                <div class="message-detail">
+                                	<p class="message-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                    <p>Thank you!</p>
+                                    <p>Katherine West</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+    </div>    
+    <a href="#" class="cancel-btn"></a>
+</div>
+
+ 
+<!--main end -->
+
+
+
+</body>
+</html>

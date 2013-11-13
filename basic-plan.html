@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html>
+<!--<![endif]-->
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    
+    <title>Basic plan</title>
+    
+    <link type="text/css" rel="stylesheet/less" href="css/style.less" />
+    
+    <!--[if lte IE 8]>
+    <link type="text/css" rel="stylesheet" href="css/ie.css" />
+    <script type="text/javascript" src="js/modernizr.min.js"></script>
+    <![endif]-->
+    
+    <!--[if lte IE 6]>
+    <script type="text/javascript" src="js/belated.js"></script>
+    <![endif]-->
+    
+    
+    <script type="text/javascript" src="js/less-1.0.35.min.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/hzz5wuk.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/scrool-bar.js"></script>
+    <script>
+		$(function() {
+			// scrollbar
+			$('.scroll').tinyscrollbar();
+			
+			$(".wedding-in").click(function() {
+				$(".basicservices-dropdown").show();
+				
+				$('.scroll').tinyscrollbar();
+				
+				return false
+			});
+			
+			$(".overview li a").click(function() {
+				$(".overview li a").removeClass('active');
+				$(this).addClass('active');
+				
+				return false
+			});
+			
+			$(".basicservices-dropdown .select-option li a").hover(function() {
+				$(".accordiansection").hide();
+				$(this.hash).show();
+				$(".sub-category").show();
+			});
+			
+			$(".basicservices-dropdown .select-option li a").click(function() {
+				
+				$(this).parents(".basicservices-dropdown").hide();
+				
+				$(".basicservices-dropdown .select-option li a").removeClass('active');
+				$(this).addClass('active');
+				
+				var services = $(this).html();
+				$("#wedding-services em").html(services);
+				
+				return false
+			});
+			
+			
+			
+			
+			$("body").click(function() {
+				$(".basicservices-dropdown").hide();
+			});
+			
+			$(".basicservices-dropdown").click(function(e) {
+				e.stopPropagation();
+			});
+			
+			
+			
+			$(".advertise-in").click(function() {
+				$(".basic-dropdown-advertise .select-option").show();
+				$('.scroll').tinyscrollbar();
+				return false
+			});
+			
+			$(".basic-dropdown-advertise .overview li a").click(function() {
+				//var country = $(this).html();
+				//$("#advertise-in em").html(country);
+				//$(this).parents(".basic-dropdown-advertise .select-option").hide();
+				$(".basic-dropdown-advertise .overview li a").removeClass('active');
+				$(this).addClass('active');
+				return false
+			});
+			
+			$(".advertise-save-btn a").click(function() {
+				var country = $(".basic-dropdown-advertise .active").html();
+				$("#advertise-in em").html(country);
+				$(this).parents(".basic-dropdown-advertise .select-option").hide();
+				return false
+			});
+			
+			
+			
+			$("body").click(function() {
+				$(".basic-dropdown-advertise .select-option").hide();
+			});
+			
+			$(".basic-dropdown-advertise .select-option").click(function(e) {
+				e.stopPropagation();
+			});
+			
+		});
+	</script>
+    
+</head>
+
+<body id="registration-page">
+
+<!--header start -->
+<div class="content-width">
+	<div class="header">
+    	<div class="registration-logo">
+        	<a href="#"><img src="images/registration-logo.png" alt="" ></a>
+        </div>
+    </div>
+</div>
+<!--header end -->
+
+<div class="basicplan-section">
+<!--main start -->
+<div class="content-width">
+	<div class="main">
+    	<span class="step">Step 2 of 5</span>
+        <h2>Add the wedding services you offer and<br> the locations you serve</h2>
+        <div class="basic-dropdown-wrap clearfix">
+       		<a href="#" class="wedding-in" id="wedding-services"><em>Wedding service</em><span>&nbsp;</span></a>
+            <div class="basicservices-dropdown">
+                <div class="select-option">
+                    <!--<span>Select a wedding service</span> -->
+                    <div class="inner-option">
+                        <div class="scroll">
+                        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                        <div class="viewport">
+                            <div class="overview">
+                                <ul>
+                                    <li><a href="#accordiansection-1">Photography</a></li>
+                                    <li><a href="#accordiansection-2">Videography</a></li>
+                                    <li><a href="#accordiansection-3" class="active">Favors</a></li>
+                                    <li><a href="#accordiansection-4">Disk Jockey</a></li>
+                                    <li><a href="#accordiansection-5">Interior Decorators</a></li>
+                                    <li><a href="#accordiansection-1">Photography</a></li>
+                                    <li><a href="#accordiansection-2">Videography</a></li>
+                                    <li><a href="#accordiansection-3">Favors</a></li>
+                                    <li><a href="#accordiansection-4">Disk Jockey</a></li>
+                                    <li><a href="#accordiansection-5">Interior Decorators</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-category clearfix">
+                	<div class="accordiansection" id="accordiansection-1">
+                		<span>Photography includes the following sub-categories</span>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                            <li>Flower Arrangements</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                        </ul>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                            <li>Flower Arrangements</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                        </ul>
+                    </div>
+                    <div class="accordiansection" id="accordiansection-2">
+                		<span>Videography includes the following sub-categories</span>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                            <li>Flower Arrangements</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                        </ul>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                        </ul>
+                    </div>
+                    <div class="accordiansection" id="accordiansection-3"  style="display:inline-block;">
+                		<span>Favors includes the following sub-categories</span>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                            <li>Flower Arrangements</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                        </ul>
+                        <ul>
+                            <li>Candy</li>
+                        </ul>
+                    </div>
+                    <div class="accordiansection" id="accordiansection-4">
+                		<span>Disk Jockey includes the following sub-categories</span>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                            <li>Flower Arrangements</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                        </ul>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                            <li>Flower Arrangements</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                        </ul>
+                    </div>
+                    <div class="accordiansection" id="accordiansection-5">
+                		<span>Interior Decorators includes the following sub-categories</span>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                            <li>Flower Arrangements</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                        </ul>
+                        <ul>
+                            <li>Candy</li>
+                            <li>Personalized</li>
+                            <li>Mandaps &amp; Isles</li>
+                            <li>Statues</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                            <li>Flower Arrangements</li>
+                            <li>Boxes</li>
+                            <li>Statues</li>
+                        </ul>
+                    </div>    
+                </div>
+                </div>
+            <div class="basic-dropdown-advertise">    
+       		<a href="#" class="advertise-in" id="advertise-in"><em>Advertise in</em><span>&nbsp;</span></a>
+            <div class="select-option">
+            	<span class="getting-married">Select the state you are getting married in</span>
+                <div class="inner-option">
+                    <div class="scroll">
+                        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                        <div class="viewport">
+                            <div class="overview">
+                                <ul>
+                                    <li><a href="#">Alabama</a></li>
+                                    <li><a href="#">Alaska</a></li>
+                                    <li><a href="#">Arizona</a></li>
+                                    <li><a href="#">Arkansas</a></li>
+                                    <li><a href="#">California</a></li>
+                                    <li><a href="#">Colorado</a></li>
+                                    <li><a href="#">Connecticut</a></li>
+                                    <li><a href="#">Delaware</a></li>
+                                    <li><a href="#">Florida</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#">Indiana</a></li>
+                                    <li><a href="#">Iowa</a></li>
+                                    <li><a href="#">Kansas</a></li>
+                                    <li><a href="#">Kentucky</a></li>
+                                    <li><a href="#">Louisiana</a></li>
+                                    <li><a href="#">Maine</a></li>
+                                    <li><a href="#">Maryland</a></li>
+                                    <li><a href="#">Massachusetts</a></li>
+                                    <li><a href="#">Michigan</a></li>
+                                </ul>
+                                <ul class="last">
+                                    <li><a href="#">Nebraska</a></li>
+                                    <li><a href="#">Nevada</a></li>
+                                    <li><a href="#">Nevada</a></li>
+                                    <li><a href="#">New Jersey</a></li>
+                                    <li><a href="#">New Mexico</a></li>
+                                    <li><a href="#">New York</a></li>
+                                    <li><a href="#">North Carolina</a></li>
+                                    <li><a href="#">North Dakota</a></li>
+                                    <li><a href="#">Ohio</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+                <div class="advertise-save-btn clearfix">
+                	<a class="btn-default silver-btn large" href="#">Save</a>        	
+                </div>
+             </div>
+        	</div>        
+        </div>
+        <p><span>To add more services or locations, select the <a href="#">PRO plan</a></span></p> 
+      <p class="basicplan-filed">
+        	<input class="input-field" type="text" placeholder="Business name">
+        	<input class="business-zipcode input-field" type="text" placeholder="Business zipcode">   
+        </p>
+        <p class="basicplan-filed">
+       	  <input class="input-field" type="text" placeholder="Username.redbrides.com">
+        </p>
+      <p class="basicplan-filed last">
+        	<input class="input-field" type="text" placeholder="Phone number">
+        </p>   
+        <div class="section-btn">
+        	<a class="btn blackish-btn large" href="#">Go back</a>
+        	<a class="btn primary-btn large" href="#">All Done!</a>
+        </div> 
+  </div>
+</div>
+<!--main end -->
+
+
+</body>
+</html>
